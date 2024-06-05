@@ -1,4 +1,4 @@
-# spatial-audio
+# spatial-audio-direction-localizer
 The goal of this project is to accurately determine the direction of a sound source using only a processed mono audio recording, which is then played through stereo headphones or speakers. By leveraging mathematical models of the head and other body parts, we develop filters that produce audio with spatial effects. These models consider variations in azimuth, elevation, distance, and room reverberations. 
 
 For azimuthal variation, we implement head shadow and interaural time delay filters. To account for elevation changes, we use pinna and shoulder filters. Room reverberation is simulated by adjusting echo intensity and incorporating time delay filters. The combined output of these filters generates the spatial audio for headphone playback.
