@@ -1,2 +1,8 @@
 # spatial-audio
-This project spatially localizes the direction of the sound’s source by just listening to a processed single channel mono audio recording being played on stereo headphones
+The goal of this project is to accurately determine the direction of a sound source using only a processed mono audio recording, which is then played through stereo headphones or speakers. By leveraging mathematical models of the head and other body parts, we develop filters that produce audio with spatial effects. These models consider variations in azimuth, elevation, distance, and room reverberations. 
+
+For azimuthal variation, we implement head shadow and interaural time delay filters. To account for elevation changes, we use pinna and shoulder filters. Room reverberation is simulated by adjusting echo intensity and incorporating time delay filters. The combined output of these filters generates the spatial audio for headphone playback.
+
+When driving loudspeakers, further processing is necessary. We use a technique called crosstalk cancellation to eliminate the interference of the opposite channel at each ear. This is achieved with a combination of head shadow filters, time delay filters, and a comb filter with a low pass filter in the feedback loop. This process ensures that the spatial effects are preserved when the audio is played through speakers.
+
+This project demonstrates that instead of relying on Head-Related Transfer Functions (HRTFs), which are costly in terms of operation and storage, modeling the human body parts that affect sound waves is a more efficient and customizable solution. This method allows for easy personalization of the spatial audio environment by simply adjusting a few parameters, making it suitable for real-time applications with both headphones and loudspeakers.
